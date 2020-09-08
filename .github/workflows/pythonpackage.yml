@@ -30,12 +30,12 @@ jobs:
         run: |
           poetry install
 
-      - name: Install dependencies
+      - name: Run pyinstaller to make .exe file
         run: |
           poetry run pyinstaller main.py --onefile
 
       - uses: actions/upload-artifact@v1
         name: Upload Windows archive
         with:
-          name: my_game_windows
+          name: my_script
           path: dist/
